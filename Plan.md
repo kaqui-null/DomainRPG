@@ -2,7 +2,6 @@
 - Make a Board
   - ~~Make a window with a solid color~~
   - Divide it in cells
-  - test
   - Make the cells alternate in color
 - Make the cells interactable
 - Make a character
