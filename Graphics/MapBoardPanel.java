@@ -5,13 +5,13 @@ import java.awt.*;
 
 public class MapBoardPanel extends JPanel {
 
-    int totalNumberOfCells;
+    private int totalNumberOfCells;
 
     public MapBoardPanel(int cellsX, int cellsY, int cellsSize) {
         super();
         this.setLayout(new GridLayout());
         this.setSizeByCellSize(cellsX, cellsY, cellsSize);
-        this.totalNumberOfCells = cellsX*cellsY;
+        setTotalNumberOfCells(cellsX*cellsY);
     }
 
     public int fitCells(int numberOfCells, int cellSize) {
@@ -24,4 +24,11 @@ public class MapBoardPanel extends JPanel {
         this.setSize(sizeX, sizeY);
     }
 
+    public int getTotalNumberOfCells() {
+        return totalNumberOfCells;
+    }
+
+    public void setTotalNumberOfCells(int totalNumberOfCells) {
+        this.totalNumberOfCells = totalNumberOfCells;
+    }
 }
