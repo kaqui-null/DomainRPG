@@ -6,6 +6,8 @@ import java.awt.*;
 public class MapBoardPanel extends JPanel {
 
     private int totalNumberOfCells;
+    private int currCellSprite;
+    private int currPosition;
 
     public MapBoardPanel(int cellsX, int cellsY, int cellsSize) {
         super();
@@ -30,5 +32,21 @@ public class MapBoardPanel extends JPanel {
 
     public void setTotalNumberOfCells(int totalNumberOfCells) {
         this.totalNumberOfCells = totalNumberOfCells;
+    }
+
+    public int getCurrCellSprite() {
+        return currCellSprite;
+    }
+
+    public void setCurrCellSprite(int currCellSprite) {
+        this.currCellSprite = currCellSprite;
+    }
+
+    public int getCurrPosition() {
+        return currPosition;
+    }
+
+    public void setCurrPosition(int currPosition) {
+        this.currPosition = currPosition;
     }
 }
