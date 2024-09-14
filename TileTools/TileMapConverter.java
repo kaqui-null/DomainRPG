@@ -1,19 +1,32 @@
 package TileTools;
 
-import java.awt.*;
-import java.io.File;
+import Graphics.Cell;
 
-public class TileMapConverter {
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-    private File tileTxt;
+public class TileMapConverter{
+
+    private String tileTxt;
 
     public TileMapConverter(String tileSetLocation) {
-        tileTxt = new File(tileSetLocation);
+        try {
+            tileTxt = new String(Files.readAllBytes(Paths.get(tileSetLocation)));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    /*
-    * TODO: Send converter info to panel creator
-    *       Use info in Cell class to create cells
-    *       Add cells to panel*/
+    public Cell read(int i){
+        char currCode = this.tileTxt.charAt(i);
+        return switch (currCode) {
+            case 'B' -> new Cell("black");
+            case 'W' -> new Cell("white");
+            default -> new Cell();
+        };
+    }
+
 
 }
